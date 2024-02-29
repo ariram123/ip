@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fibuno Series</title>
+</head>
+<label for="input">Howmany <b> Fibuno number</b> you want</label>
+<input type="number" id="input">
+<button onclick="fibu()" >fibuno for enter value</button>
+<p>output :</p><div id="output"></div>
+<button onclick="fibu1()">fibuno for alert value</button>
+<p>output :</p><div id="output1"></div>
+
+<body>
+    <script>
+
+        // useing array
+        function fibu(){
+            
+            let a=[0,1]
+            let n=document.getElementById("input").value
+    
+            for(i=2;i<n;i++){
+                c=a[i-2]+a[i-1]
+                //console.log(c)
+                //a.push(c)
+                a[i]=c
+                
+            }
+            for(j=0;j<a.length;j++){
+                
+                document.getElementById("output").innerHTML+=a[j]+",";
+                console.log(a[j]);
+            }
+        }
+
+        //using normal declaration
+        function fibu1(){
+            let a1=0,b=1,c
+            let m=prompt("enter any number:","number only")
+            console.log(a1)
+            console.log(b)
+            document.getElementById("output1").innerHTML+=a1+" , "+b;
+            for (let z = 0; z < m; z++) {
+                c=a1+b;
+                if(c >= m){
+                    break
+                }          
+                console.log(c)
+                document.getElementById("output1").innerHTML+=" , "+c;
+                a1=b
+                b=c 
+            }
+
+
+        }
+    </script>
+</body>
+</html>
